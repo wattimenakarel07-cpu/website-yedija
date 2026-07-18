@@ -2,6 +2,7 @@
 {
   "name": "Karel Coding",
   "short_name": "Karel",
+"id": "/",
   "description": "Belajar coding dengan mudah menggunakan Karel Coding.",
   "start_url": "./",
   "scope": "./",
