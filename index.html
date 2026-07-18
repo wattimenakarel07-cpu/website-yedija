@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta name="google-site-verification" content="oz983EGA9GgOts9Vyb28r7ECjBhJWC9C6JD6-rR_xqM" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cheatsheet Tag HTML</title>
@@ -9,65 +8,117 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<button id="btnTema">🌙 Ganti Tema</button>
+<header class="navbar">
+    <div class="logo">
+        <h2>Belajar Coding</h2>
+    </div>
 
-<h1 id="judul-utama">Belajar Tag & Atribut HTML</h1>
-  <p class="deskripsi">Ini adalah <b>file contoh</b> semua tag penting.</p>
-  <hr>
+    <div class="search">
+        <input type="text" placeholder="Cari sesuatu...">
+    </div>
 
-  <!-- LINK & GAMBAR -->
-  <h2>Link & Gambar</h2>
-  <a href="https://ut.ac.id" target="_blank" title="Ke website UT">Daftar UT Disini</a>
-  <br><br>
-  <img src="https://via.placeholder.com/150" alt="Contoh Gambar" width="150">
+    <div class="menu">
+        <button>🏠</button>
+        <button>👤</button>
+        <button>💬</button>
+        <button id="btnTema">🌙</button>
+    </div>
+</header>
 
-  <!-- LIST -->
-  <h2>List</h2>
-  <ul type="square">
-    <li>Item 1</li>
-    <li>Item 2</li>
-  </ul>
-  <ol type="A" start="3">
-    <li>Nomor 3</li>
-    <li>Nomor 4</li>
-  </ol>
+<div class="container">
 
-  <!-- TABEL -->
-  <h2>Tabel</h2>
-  <table>
-    <tr>
-      <th>Nama</th>
-      <th>Gelar</th>
-    </tr>
-    <tr>
-      <td>Budi</td>
-      <td>A.Md.PSD</td>
-    </tr>
-  </table>
+    <aside class="left">
+        <div class="card">
+            <img src="https://i.pravatar.cc/100" alt="Foto Profil">
+            <h3>Karel</h3>
+            <p>Belajar HTML & CSS</p>
+        </div>
 
-  <!-- FORM -->
-  <h2>Form</h2>
-  <form id="formContoh" action="#" method="post">
-    <label for="nama">Nama:</label><br>
-    <input type="text" id="nama" name="nama" placeholder="Tulis nama" required><br><br>
-    
-    <label>Jurusan:</label><br>
-    <select name="jurusan">
-      <option value="pgsd">D3 PGSD</option>
-      <option value="paud">D3 PGPAUD</option>
-    </select><br><br>
+        <div class="menu-list">
+            <p>🏠 Beranda</p>
+            <p>👥 Teman</p>
+            <p>📷 Foto</p>
+            <p>⚙️ Pengaturan</p>
+        </div>
+    </aside>
 
-    <textarea rows="3" cols="30" placeholder="Pesan..."></textarea><br><br>
-    
-    <input type="submit" value="Kirim">
-  </form>
+    <main class="feed">
 
-  <!-- LAYOUT -->
-  <div class="container">
-    <footer>
-      <p style="text-align:center; color:gray;">Copyright 2026 - Belajar HTML</p>
-    </footer>
-  </div>
+        <div class="create-post">
+            <input type="text" placeholder="Apa yang sedang Anda pikirkan?">
+            <button>Posting</button>
+        </div>
+
+        <div class="post">
+
+            <div class="post-header">
+                <img src="https://i.pravatar.cc/60">
+
+                <div>
+                    <h4>Karel</h4>
+                    <small>Baru saja</small>
+                </div>
+
+            </div>
+
+            <p>
+                Website pertamaku berhasil online 🎉
+            </p>
+
+            <img src="https://picsum.photos/700/350">
+
+            <div class="actions">
+                <button>👍 Suka</button>
+                <button>💬 Komentar</button>
+                <button>↗ Bagikan</button>
+            </div>
+
+        </div>
+
+        <div class="post">
+
+            <div class="post-header">
+                <img src="https://i.pravatar.cc/61">
+
+                <div>
+                    <h4>UT Social</h4>
+                    <small>10 menit lalu</small>
+                </div>
+
+            </div>
+
+            <p>
+                Selamat datang di media sosial buatan sendiri.
+            </p>
+
+            <div class="actions">
+                <button>👍 Suka</button>
+                <button>💬 Komentar</button>
+                <button>↗ Bagikan</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <aside class="right">
+
+        <div class="card">
+
+            <h3>Teman Online</h3>
+
+            <p>🟢 Budi</p>
+            <p>🟢 Sinta</p>
+            <p>🟢 Andi</p>
+            <p>🟢 Rina</p>
+
+        </div>
+
+    </aside>
+
+</div>
+
 <script src="script.js"></script>
+
 </body>
 </html>
