@@ -2,10 +2,10 @@
 {
   "name": "Karel Coding",
   "short_name": "Karel",
-"id": "/",
+"id": "/website-yedija/",
   "description": "Belajar coding dengan mudah menggunakan Karel Coding.",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/website-yedija/",
+  "scope": "/website-yedija/",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#2563eb",
