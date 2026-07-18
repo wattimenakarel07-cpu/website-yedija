@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheatsheet Tag HTML</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    h1 { color: #2c3e50; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background-color: #3498db; color: white; }
+    .contoh { background: #f1f1f1; padding: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+
+  <h1 id="judul-utama">Belajar Tag & Atribut HTML</h1>
+  <p class="deskripsi">Ini adalah <b>file contoh</b> semua tag penting.</p>
+  <hr>
+
+  <!-- LINK & GAMBAR -->
+  <h2>Link & Gambar</h2>
+  <a href="https://ut.ac.id" target="_blank" title="Ke website UT">Daftar UT Disini</a>
+  <br><br>
+  <img src="https://via.placeholder.com/150" alt="Contoh Gambar" width="150">
+
+  <!-- LIST -->
+  <h2>List</h2>
+  <ul type="square">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+  <ol type="A" start="3">
+    <li>Nomor 3</li>
+    <li>Nomor 4</li>
+  </ol>
+
+  <!-- TABEL -->
+  <h2>Tabel</h2>
+  <table>
+    <tr>
+      <th>Nama</th>
+      <th>Gelar</th>
+    </tr>
+    <tr>
+      <td>Budi</td>
+      <td>A.Md.PSD</td>
+    </tr>
+  </table>
+
+  <!-- FORM -->
+  <h2>Form</h2>
+  <form action="#" method="post">
+    <label for="nama">Nama:</label><br>
+    <input type="text" id="nama" name="nama" placeholder="Tulis nama" required><br><br>
+    
+    <label>Jurusan:</label><br>
+    <select name="jurusan">
+      <option value="pgsd">D3 PGSD</option>
+      <option value="paud">D3 PGPAUD</option>
+    </select><br><br>
+
+    <textarea rows="3" cols="30" placeholder="Pesan..."></textarea><br><br>
+    
+    <input type="submit" value="Kirim">
+  </form>
+
+  <!-- LAYOUT -->
+  <div class="container">
+    <footer>
+      <p style="text-align:center; color:gray;">Copyright 2026 - Belajar HTML</p>
+    </footer>
+  </div>
+
+</body>
+</html>
