@@ -1,5 +1,4 @@
-const CACHE_NAME = "karel-coding-v2";
-
+const CACHE_NAME = "karel-coding-v5";
 const FILES_TO_CACHE = [
   "/website-yedija/",
   "/website-yedija/index.html",
