@@ -1,13 +1,13 @@
-const CACHE_NAME = "karel-coding-v1";
+const CACHE_NAME = "karel-coding-v2";
 
 const FILES_TO_CACHE = [
-  "./",
-  "./index.html",
-  "./style.css",
-  "./script.js",
-  "./manifest.json",
-  "./logo-192.png",
-  "./logo-512.png"
+  "/website-yedija/",
+  "/website-yedija/index.html",
+  "/website-yedija/style.css",
+  "/website-yedija/script.js",
+  "/website-yedija/manifest.json",
+  "/website-yedija/logo-192.png",
+  "/website-yedija/logo-512.png"
 ];
 
 self.addEventListener("install", (event) => {
