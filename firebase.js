@@ -3,7 +3,8 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
-  signOut
+  signOut,
+  onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -32,3 +33,13 @@ window.logoutGoogle = async function () {
   await signOut(auth);
   alert("Berhasil logout.");
 };
+
+onAuthStateChanged(auth, (user) => {
+    const nama = document.getElementById("userName");
+
+    if (user) {
+        nama.innerHTML = "👋 " + user.displayName;
+    } else {
+        nama.innerHTML = "Belum login";
+    }
+});
