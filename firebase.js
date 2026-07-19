@@ -3,6 +3,8 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
@@ -25,14 +27,41 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+getRedirectResult(auth)
+  .then((result) => {
+    if (result?.user) {
+      alert("Selamat datang, " + result.user.displayName + "!");
+    }
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 
 window.loginGoogle = async function () {
+
+  const isMobile =
+    /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
   try {
-    const result = await signInWithPopup(auth, provider);
-    alert("Selamat datang, " + result.user.displayName + "!");
+
+    if (isMobile) {
+
+      await signInWithRedirect(auth, provider);
+
+    } else {
+
+      const result = await signInWithPopup(auth, provider);
+
+      alert("Selamat datang, " + result.user.displayName + "!");
+
+    }
+
   } catch (error) {
+
     alert("Login gagal: " + error.message);
+
   }
+
 };
 
 window.logoutGoogle = async function () {
