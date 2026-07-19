@@ -39,36 +39,90 @@ tombolLike.forEach(btn=>{
 // ===============================
 // POSTING BARU
 // ===============================
+async function tampilkanPosting() {
 
-const input=document.querySelector(".create-post input");
-const tombol=document.querySelector(".create-post button");
-const feed=document.querySelector(".feed");
+    feed.innerHTML = "";
 
-tombol.addEventListener("click",()=>{
+    const data = await ambilPosting();
 
-const isi=input.value.trim();
+    data.forEach((item) => {
 
-if(isi===""){
-alert("Tulis sesuatu dulu 😄");
-return;
-}
+        const posting = document.createElement("div");
 
-const posting=document.createElement("div");
+        posting.className = "post";
 
-posting.className="post";
-
-posting.innerHTML=`
+        posting.innerHTML = `
 
 <div class="post-header">
 
 <img src="https://i.pravatar.cc/62">
 
 <div>
-
 <h4>Karel</h4>
-
 <small>Baru saja</small>
+</div>
 
+</div>
+
+<p>${item.text}</p>
+
+<div class="actions">
+<button>👍 Suka (0)</button>
+<button class="btnKomentar">💬 Komentar</button>
+<button>↗ Bagikan</button>
+</div>
+
+<div class="komentar-area" style="display:none; margin-top:10px;">
+<input type="text" class="inputKomentar" placeholder="Tulis komentar...">
+<button class="kirimKomentar">Kirim</button>
+
+<div class="daftarKomentar"></div>
+</div>
+
+`;
+
+        feed.appendChild(posting);
+const likeBaru = posting.querySelector(".actions button");
+
+let jumlah = 0;
+
+likeBaru.addEventListener("click", () => {
+
+    jumlah++;
+
+    likeBaru.innerHTML = `👍 Suka (${jumlah})`;
+
+});
+    });
+
+}
+const input=document.querySelector(".create-post input");
+const tombol=document.querySelector(".create-post button");
+const feed=document.querySelector(".feed");
+
+tombol.addEventListener("click", async () => {
+
+const isi = input.value.trim();
+
+if (isi === "") {
+    alert("Tulis sesuatu dulu 😄");
+    return;
+}
+
+
+const posting=document.createElement("div");
+
+posting.className="post";
+
+posting.innerHTML = `
+
+<div class="post-header">
+
+<img src="https://i.pravatar.cc/62">
+
+<div>
+<h4>Karel</h4>
+<small>Baru saja</small>
 </div>
 
 </div>
@@ -76,31 +130,23 @@ posting.innerHTML=`
 <p>${isi}</p>
 
 <div class="actions">
-
 <button>👍 Suka (0)</button>
-
-<button>💬 Komentar</button>
-
+<button class="btnKomentar">💬 Komentar</button>
 <button>↗ Bagikan</button>
+</div>
 
+<div class="komentar-area" style="display:none; margin-top:10px;">
+<input type="text" class="inputKomentar" placeholder="Tulis komentar...">
+<button class="kirimKomentar">Kirim</button>
+
+<div class="daftarKomentar"></div>
 </div>
 
 `;
 
-feed.insertBefore(posting,feed.children[1]);
-
-const likeBaru=posting.querySelector(".actions button");
-
-let jumlah=0;
-
-likeBaru.addEventListener("click",()=>{
-
-jumlah++;
-
-likeBaru.innerHTML=`👍 Suka (${jumlah})`;
-
-});
-
+await simpanPosting(isi);
 input.value="";
+await tampilkanPosting();
 
 });
+tampilkanPosting();

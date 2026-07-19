@@ -6,7 +6,12 @@ import {
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
-
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyA4Uje8SWc7BXVW2wlFcXX6dfw2rcPVZi0",
   authDomain: "karel-web-2.firebaseapp.com",
@@ -17,6 +22,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
@@ -56,3 +62,30 @@ onAuthStateChanged(auth, (user) => {
     }
 
 });
+window.simpanPosting = async function (isi) {
+
+  try {
+
+    await addDoc(collection(db, "posts"), {
+      text: isi
+    });
+
+    alert("Posting berhasil disimpan!");
+
+  } catch (error) {
+
+    alert("Gagal menyimpan: " + error.message);
+
+  }
+
+};
+window.ambilPosting = async function () {
+
+  const snapshot = await getDocs(collection(db, "posts"));
+
+  return snapshot.docs.map(doc => ({
+    id: doc.id,
+    ...doc.data()
+  }));
+
+};
