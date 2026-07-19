@@ -35,11 +35,24 @@ window.logoutGoogle = async function () {
 };
 
 onAuthStateChanged(auth, (user) => {
+
     const nama = document.getElementById("userName");
+    const tombol = document.getElementById("btnLogin");
 
     if (user) {
+
         nama.innerHTML = "👋 " + user.displayName;
+
+        tombol.innerHTML = "🚪 Logout";
+        tombol.onclick = logoutGoogle;
+
     } else {
+
         nama.innerHTML = "Belum login";
+
+        tombol.innerHTML = "👤 Masuk";
+        tombol.onclick = loginGoogle;
+
     }
+
 });
